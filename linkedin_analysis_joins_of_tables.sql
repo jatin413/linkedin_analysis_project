@@ -1,7 +1,5 @@
-USE project1;
-SELECT * FROM table_1;
-SELECT * FROM table_2;
-SELECT * FROM table_3;
+USE project;
+
 
 -- JOBS AT DISTINCT LOCATION
 SELECT COUNT(DISTINCT state) FROM table_1;
@@ -15,10 +13,6 @@ GROUP BY state
 HAVING STATE != 'NOT_SPECIFY' 
 ORDER BY COUNT(COMPANY_ID) DESC;
 
-SELECT STATE, COUNT(COMPANY_ID) AS NUM_JOBS
-FROM table_1
-WHERE STATE LIKE '%MAHARASHTRA%'
-GROUP BY STATE;
 
 --level not specify
 select count(level) 
@@ -37,9 +31,7 @@ GROUP BY b.industry;
 --Generate insights into number of opening with respect to the current employee count
 --Number of opening in a company with more than 1000 employees in comparison to number of openings in a company with 100 employees
 
-select * from table_1;
-select * from table_2;
-select * from table_3;
+
 
 SELECT COUNT(a.JOB_ID) AS EMPLOYEE_LESS_101
 FROM table_1 AS a
@@ -59,10 +51,6 @@ or how many Data Analytics jobs are there in Bangalore as compared to number of 
 this needs to be done in SQL but presented in the above created Excel dashboard*/
 
 /*To create Master Table For Analysis*/
-
-select * from table_1;
-select * from table_2;
-select * from table_3;
 
 select * from table_1 as a left join table_2 as b on a.company_id = b.company_id
 left join table_3 as c on a.details_id = c.details_id
